@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
 import './App.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import AllCourse from './AllCourse';
+import FullStack from './FullStack';
+import DataScience from './DataScience';
+import CyberSecurity from './CyberSecurity';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" Component={AllCourse}/>
+        <Route path='/Fullstack' Component={FullStack}/>
+        <Route path='/Datascience' Component={DataScience}/>
+        <Route path='/Cybersecurity' Component={CyberSecurity}/>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
